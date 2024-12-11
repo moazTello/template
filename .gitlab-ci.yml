@@ -1,0 +1,38 @@
+variables:
+  PATH_E: $PATH_E_QA
+  BUILD_PROJECT: npm run build:qa
+  P_ENV: qa
+
+workflow:
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+      variables:
+        PATH_E: $PATH_E_PROD
+        BUILD_PROJECT: npm run build:prod
+        P_ENV: production
+    - when: always
+
+build:
+  stage: build
+  only:
+    - develop
+    - main
+
+  script:
+    - echo Preparing the environment for $CI_COMMIT_REF_NAME Branch
+    - echo $PATH_E
+    - rsync -va * $PATH_E
+    - echo Building the application
+    - cd $PATH_E && cp -f $ENV_PROD .env.production
+    - cd $PATH_E && cp -f $ENV_QA .env.qa
+    - cd $PATH_E && npm install
+    - cd $PATH_E && $BUILD_PROJECT
+
+deploy:
+  stage: deploy
+  only:
+    - develop
+    - main
+
+  script:
+    - cd $PATH_E && NODE_ENV=$P_ENV pm2 reload ecosystem.config.js --update-env

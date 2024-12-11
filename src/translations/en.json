@@ -1,0 +1,22 @@
+{
+  "welcome": "welcome",
+  "signIn": "Sign In",
+  "SignInWithGoogle": "Sign in with Google",
+  "or": "or",
+  "email": "Email",
+  "password": "Password",
+  "KeepMeLoggedIn": "Keep me logged in",
+  "forgotPassword?": "Forgot password?",
+  "notRegisteredYet?": "Not registered yet?",
+  "createAnAccount": "Create an Account",
+  "enterYourEmailAndPasswordToSignIn": "Enter your email and password to sign in!",
+  "save": "save",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "mobileNumber": "Mobile Number",
+  "BRANCHES NUM": "BRANCHES NUM",
+  "ACTIVE": "ACTIVE",
+  "name.ar": "ARABIC NAME",
+  "name.en": "ENGLISH NAME",
+  "create": "CREATE"
+}

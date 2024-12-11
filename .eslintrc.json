@@ -1,0 +1,116 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["prettier", "react-app"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier", "import"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "default-param-last": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-curly-spacing": [2, "never"],
+    "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "no-shadow": "off",
+    "import/prefer-default-export": "off",
+    "react/no-children-prop": "off",
+    "func-names": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "import/extensions": "off",
+    "react/jsx-no-bind": "off",
+    "no-plusplus": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "react/destructuring-assignment": "off",
+    "react/prefer-stateless-function": "off",
+    "react/no-unknown-property": "off",
+    "no-unused-expressions": "off",
+    "no-param-reassign": "off",
+    "import/newline-after-import": "off",
+    "react/self-closing-comp": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "arrow-body-style": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "prefer-const": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "react/no-unused-prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "no-nested-ternary": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
+        "newlines-between": "always-and-inside-groups",
+        // Define 'src/' as internal modules
+        "pathGroups": [
+          {
+            "pattern": "src/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "apis/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "assets/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "components/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "contexts/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "http/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "layouts/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "theme/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "translations/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "utils/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "variables/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "views/**",
+            "group": "internal"
+          }
+        ],
+        // Exclude specific import from sorting
+        "pathGroupsExcludedImportTypes": ["internal"]
+      }
+    ]
+  },
+  "settings": { "import/resolver": { "node": { "paths": ["src"] } } }
+}
